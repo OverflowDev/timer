@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css'
+import dayjs from 'dayjs'
+import CountdownTimer from "./countdown/CountdownTimer";
 
 function App() {
+  // *1000 means convert to milliseconds 
+
+  const launchTimestamp = dayjs(1722620833 * 1000)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <CountdownTimer launchTimestamp={launchTimestamp} />
     </div>
-  );
+  )
+  // if (!launchTimestamp) {
+
+  //   return (
+  //     <div className="">
+  //       <CountdownTimer launchTimestamp={launchTimestamp} />
+  //     </div>
+  //   )
+
+  // } else {
+  //   return (
+  //     <div className=''>
+  //       <Button />
+  //     </div>
+  //   )
+  // }
 }
 
 export default App;
